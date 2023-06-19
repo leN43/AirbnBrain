@@ -21,8 +21,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def show; end
-
   def destroy
     @booking.destroy
     redirect_to brain_path(@booking.brain), status: :see_other

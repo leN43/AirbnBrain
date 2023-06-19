@@ -1,3 +1,11 @@
-<h1><%= @brain.name %>
-  <p><%= @brain.description %></p>
-  <p><%= @brain.price %></p>
+<h1><%= @booking.brain.name %></h1>
+<br>
+<p><%= @booking.brain.description %></p>
+<p><%= @booking.brain.price %></p>
+<p><%= @booking.start_date %></p>
+<p><%= @booking.end_date %></p>
+<% if current_user != @booking.user %>
+  <p><%= @booking.user.first_name %></p>
+  <p><%= @booking.user.last_name %></p>
+  <p><%= @booking.user.email %></p>
+<% end %>
