@@ -1,2 +1,6 @@
-<h1>Brains#:new</h1>
-<p>Find me in app/views/brains/:new.html.erb</p>
+<h1>New Brain 🧠 </h1>
+
+<br>
+<%= render 'form' , brain: @brain%>
+<br>
+<%= link_to 'Back to brains' , brains_path %>
