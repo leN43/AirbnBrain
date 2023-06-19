@@ -1,0 +1,13 @@
+
+  <button type="button">
+    <%= link_to "Create a new brain", new_brain_path %>
+  </button>
+
+    <% @brains.each do |brain| %>
+        <%= link_to brain_path(brain), class:"text-decoration-none" do %>
+            <%#  image %>
+            <%= brain.name %>
+            <%= brain.description %>
+            <%= brain.price %>
+        <% end %>
+    <% end %>
