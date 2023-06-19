@@ -1,8 +1,6 @@
 class BrainsController < ApplicationController
   before_action :set_brain, %i[edit show create destroy]
 
-
-
   def new
     @brain = Brain.new
   end
@@ -17,6 +15,8 @@ class BrainsController < ApplicationController
   end
 
   def destroy
+    @brain.destroy
+    redirect_to brains_path, status: :see_other
   end
 
   private

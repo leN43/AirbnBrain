@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_destroy, only: [:destroy]
+  before_action :set_booking, only: %i[destroy show]
   def index
     @bookings = Booking.all
   end
@@ -8,8 +8,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def show; end
+
   def create
     @booking = Booking.new(booking_params)
+    @brain = Brain.find(params[:brain_id])
     @booking.brain = @brain
     if @booking.save
       redirect_to brain_path(@brain)
@@ -18,21 +21,20 @@ class BookingsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def destroy
-    @bookig.destroy
-    redircte_to brains_path, status: :see_other
+    @booking.destroy
+    redirect_to brain_path(@booking.brain), status: :see_other
   end
 
   private
 
   def set_booking
-    @booking = Bookng.find(params[:booking_id])
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
-    params.require(:booking).permit(:brain_id, :user_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
