@@ -1,0 +1,45 @@
+.card-brain {
+  overflow: hidden;
+  display: flex;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  height: 160px;
+  border-radius: 4px;
+  align-items: center;
+  padding: 16px;
+}
+
+.card-brain > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-brain h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-brain p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-brain .card-brain-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-brain-infos .card-brain-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}

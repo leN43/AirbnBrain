@@ -1,5 +1,5 @@
 class BrainsController < ApplicationController
-  before_action :set_brain, %i[edit show create update destroy]
+  before_action :set_brain, except: %i[new create index]
 
   def new
     @brain = Brain.new
@@ -36,7 +36,7 @@ class BrainsController < ApplicationController
   private
 
   def brain_params
-    params.require(:brain).permit(:name, :description, :price)
+    params.require(:brain).permit(:id, :name, :description, :price)
   end
 
   def set_brain
