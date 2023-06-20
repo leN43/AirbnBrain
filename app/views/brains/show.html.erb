@@ -1,0 +1,12 @@
+<%= render '/shared/banner' %>
+<div class="card-brain">
+<%#  image %>
+<div class="card-brain-info">
+  <h2><%= @brain.name %></h2>
+  <p><%= @brain.description %></p>
+  <p><%= @brain.price %></p>
+</div>
+
+<button type="button" class="btn-gradient">
+  <%# <%= link_to "Book me! 🧠", new_booking_path, class:"text-decoration-none text-white" %>
+</button>

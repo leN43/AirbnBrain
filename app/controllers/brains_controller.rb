@@ -1,8 +1,17 @@
 class BrainsController < ApplicationController
-  before_action :set_brain, %i[edit show create destroy]
+  before_action :set_brain, except: %i[new create index]
 
   def new
     @brain = Brain.new
+  end
+
+  def create
+    @brain = Brain.new(brain_params)
+    if @brain.save
+      redirect_to brain_path(@brain)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def index
@@ -14,6 +23,11 @@ class BrainsController < ApplicationController
   def edit
   end
 
+  def update
+    @brain.update(brain_params)
+    redirect_to brain_path(@brain)
+  end
+
   def destroy
     @brain.destroy
     redirect_to brains_path, status: :see_other
@@ -22,7 +36,7 @@ class BrainsController < ApplicationController
   private
 
   def brain_params
-    params.require(:brain).permit(:name, :description, :price)
+    params.require(:brain).permit(:id, :name, :description, :price)
   end
 
   def set_brain

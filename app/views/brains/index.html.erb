@@ -1,13 +1,22 @@
 
-  <button type="button">
-    <%= link_to "Create a new brain", new_brain_path %>
-  </button>
+<%= render '/shared/banner' %>
 
-    <% @brains.each do |brain| %>
-        <%= link_to brain_path(brain), class:"text-decoration-none" do %>
-            <%#  image %>
-            <%= brain.name %>
-            <%= brain.description %>
-            <%= brain.price %>
-        <% end %>
-    <% end %>
+<button type="button" class="btn-flat">
+  <%= link_to "Create a new brain", new_brain_path, class:"text-decoration-none text-white"%>
+</button>
+
+<div class="cards-brains">
+  <% @brains.each do |brain| %>
+    <div class="card-brain">
+      <%#  image %>
+      <div class="card-brain-info">
+        <h2><%= brain.name %></h2>
+        <p><%= brain.description %></p>
+        <p><%= brain.price %></p>
+      </div>
+      <button type="button" class="btn-gradient">
+        <%= link_to "Try me ! 🧠", brain_path(brain), class:"text-decoration-none text-white" %>
+      </button>
+    </div>
+  <% end %>
+</div>
