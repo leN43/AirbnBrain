@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
     @brain = Brain.find(params[:brain_id])
     @booking.brain = @brain
     if @booking.save!
-      raise
       redirect_to brain_path(@brain)
     else
       render :new, status: :unprocessable_entity
