@@ -1,9 +1,15 @@
 
 <%= render '/shared/banner' %>
-
-<button type="button" class="btn-flat">
-  <%= link_to "Create a new brain", new_brain_path, class:"text-decoration-none text-white"%>
-</button>
+<style>
+  .footer{
+      /* position: absolute;
+      fixed: bottom;
+      width : 100vw; */
+  }
+</style>
+<div class="brains_index">
+  <h2>Nos cerveaux à la Une</h2>
+</div>
 
 <div class="cards-brains">
   <% @brains.each do |brain| %>
@@ -15,7 +21,7 @@
         <p><%= brain.price %></p>
       </div>
       <button type="button" class="btn-gradient">
-        <%= link_to "Try me ! 🧠", brain_path(brain), class:"text-decoration-none text-white " %>
+        <%= link_to "Try me ! 🧠", brain_path(brain), class:"text-decoration-none text-black" %>
       </button>
     </div>
   <% end %>
