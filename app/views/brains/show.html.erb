@@ -1,17 +1,39 @@
 
 <div class="card-brain">
 <%#  image %>
+<<<<<<< HEAD
 
 <div class="card-brain-info">
   <h2><%= @brain.name %></h2>
   <p><%= @brain.description %></p>
   <p><%= @brain.price %></p>
+=======
+  <div class="card-brain-info">
+    <h2><%= @brain.name %></h2>
+    <p><%= @brain.description %></p>
+    <p><%= @brain.price %></p>
+  </div>
+>>>>>>> 304d9eb3723bc396aa72a4f631e83dd1a3a5162d
 </div>
 
-<button type="button" class="btn-gradient">
+<%# <button type="button" class="btn-gradient">
   <%# <%= link_to "Book me! 🧠", new_booking_path, class:"text-decoration-none text-white" %>
-</button>
+<%# </button> %>
 
+<<<<<<< HEAD
 <button type="button" class="btn-gradient">
   <%= link_to "Book me! 🧠", new_booking_path, class:"text-decoration-none text-black" %>
 </button>
+=======
+<% if current_user.id == @brain.user_id %>
+  <%= link_to "Update me! 🧠", edit_brain_path(@brain), class:"text-decoration-none text-white btn-gradient" %>
+  <%= link_to "Delete me! 🧠", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient" %>
+<% end %>
+
+<div data-controller="toggle" class="mt-5">
+  <button class="btn btn-outline-primary" data-action="click->toggle#book">Book me! 🧠</button>
+  <div data-toggle-target="toggleableElement" class="d-none">
+    <%= render "/shared/formbooking", booking: @booking %>
+  </div>
+</div>
+>>>>>>> 304d9eb3723bc396aa72a4f631e83dd1a3a5162d

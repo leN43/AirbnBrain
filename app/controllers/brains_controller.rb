@@ -20,26 +20,20 @@ class BrainsController < ApplicationController
     @brains = Brain.all
   end
 
-  def show; end
+  def show
+    @booking = Booking.new()
+  end
 
   def edit; end
 
   def update
-    if current_user.id == @brain.user_id
-      @brain.update(brain_params)
-      redirect_to brain_path(@brain)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @brain.update(brain_params)
+    redirect_to brain_path(@brain)
   end
 
   def destroy
-    if current_user.id == @brain.user_id
-      @brain.destroy
-      redirect_to brains_path, status: :see_other
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @brain.destroy
+    redirect_to brains_path, status: :see_other
   end
 
   private
@@ -55,4 +49,5 @@ class BrainsController < ApplicationController
   def set_user
     @user = current_user
   end
+
 end
