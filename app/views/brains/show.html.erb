@@ -1,10 +1,11 @@
 <%= render '/shared/banner' %>
 <div class="card-brain">
 <%#  image %>
-<div class="card-brain-info">
-  <h2><%= @brain.name %></h2>
-  <p><%= @brain.description %></p>
-  <p><%= @brain.price %></p>
+  <div class="card-brain-info">
+    <h2><%= @brain.name %></h2>
+    <p><%= @brain.description %></p>
+    <p><%= @brain.price %></p>
+  </div>
 </div>
 
 <%# <button type="button" class="btn-gradient">
@@ -17,6 +18,8 @@
 <% end %>
 
 <div data-controller="toggle" class="mt-5">
-  <button class="btn btn-outline-primary">Book me! 🧠</button>
-  <%= render "form", brain: @brain %>
+  <button class="btn btn-outline-primary" data-action="click->toggle#book">Book me! 🧠</button>
+  <div data-toggle-target="toggleableElement" class="d-none">
+    <%= render "/shared/formbooking", booking: @booking %>
+  </div>
 </div>

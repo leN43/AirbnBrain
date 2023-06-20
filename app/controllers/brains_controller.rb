@@ -20,7 +20,9 @@ class BrainsController < ApplicationController
     @brains = Brain.all
   end
 
-  def show; end
+  def show
+    @booking = Booking.new()
+  end
 
   def edit; end
 
@@ -47,4 +49,5 @@ class BrainsController < ApplicationController
   def set_user
     @user = current_user
   end
+
 end
