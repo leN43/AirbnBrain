@@ -1,7 +1,11 @@
 <h1>My Brains Bookings</h1>
 
 <% @bookings.each do |booking| %>
-  <%= booking.brain.name %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
+  <ul>
+    <li>
+      <%= link_to booking.brain.name, booking_path(booking) %>
+      <%= booking.start_date %>
+      <%= booking.end_date %>
+    </li>
+  </ul>
 <% end %>
