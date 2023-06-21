@@ -49,4 +49,4 @@ brains.each do |brain|
   )
 end
 
-Booking.create!(brain: Brain.last, user: User.last, start_date: DateTime.new(2022, 2, 3), end_date: DateTime.new(2022, 2, 6))
+# Booking.create!(brain: Brain.last, user: User.last, start_date: DateTime.new(2022, 2, 3), end_date: DateTime.new(2022, 2, 6))
