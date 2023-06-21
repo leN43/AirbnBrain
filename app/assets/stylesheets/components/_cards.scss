@@ -5,9 +5,11 @@
 }
 
 .cards-brains {
-  display:flex;
+  display: flex;
+  position: absolute;
   flex-direction: column;
   justify-content: space-between;
+  width: auto;
 }
 
 // Smallest device
