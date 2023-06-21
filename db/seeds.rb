@@ -10,7 +10,7 @@ require 'date'
 
 brains = [{ name: "Bulby Le Rêveur", description: "Un cerveau qui passe son temps à rêver d'une vie meilleure en tant que cerveau de génie. Il est souvent dans la lune, mais attention, il peut vous surprendre avec des idées brillantes qu'il concocte lors de ses longues rêveries.", category: "Poesie de la lune", price: 1000},
 
-{ name: "Léonard Le Distrait", description: "Léonard a un penchant pour l'oubli de choses importantes. Il est génial dans des domaines aléatoires comme la mémorisation de paroles de chansons des années 90, mais il oubliera votre anniversaire. Chaque fois.", category: "Chanteur de douche", price: 800 },
+{name: "Léonard Le Distrait", description: "Léonard a un penchant pour l'oubli de choses importantes. Il est génial dans des domaines aléatoires comme la mémorisation de paroles de chansons des années 90, mais il oubliera votre anniversaire. Chaque fois.", category: "Chanteur de douche", price: 800 },
 
 {name: "Penny La Procrastinatrice", description: "Penny est excellente pour planifier et organiser des tâches... pour les réaliser plus tard. Elle a l'art de faire attendre les choses jusqu'à la dernière minute. C'est le cerveau à choisir si vous aimez vivre sur le fil.", category: "Urgentiste", price: 700},
 

@@ -12,7 +12,8 @@
 
 <div class="cards-booking">
   <div class="card-booking-info">
-  <% if @list_booking.nil? %>
+  <% list_booking_by_brain = @list_booking.find(@brain.id) %>
+  <% if list_booking_by_brain.nil? %>
     <p>Tu n'as pas de reservation pour ce cerveau !</p>
   <% elsif @size_booking > 1 %>
     <% @list_booking.each do |booking| %>
@@ -31,6 +32,7 @@
           <li><%= booking.start_date %></li>
           <li><%= booking.end_date %></li>
         </ul>
+        <%= link_to "All my bookings, " %>
       <% end %>
     <% end %>
   <% else %>

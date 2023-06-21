@@ -52,8 +52,7 @@ class BrainsController < ApplicationController
   end
 
   def set_booking
-    @list_booking = Booking.find_by(user_id: current_user.id, brain_id: @brain.id)
-    @list_booking_by_brain = Booking.where(brain_id: @brain.id)
+    @list_booking = Booking.find_by(brain_id: @brain.id)
     @size_booking = @user.bookings.size
   end
 end

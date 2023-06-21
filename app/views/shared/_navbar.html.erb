@@ -12,9 +12,6 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Mes réservations", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
             <%= link_to "Mes cerveaux", bookings_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
