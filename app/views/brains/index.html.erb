@@ -8,8 +8,9 @@
       <%#  image %>
       <div class="card-brain-info">
         <h2><%= brain.name %></h2>
+        <h5><em><%= brain.category%></em></h5>
         <p><%= brain.description %></p>
-        <p><%= brain.price %></p>
+        <p><%= brain.price %> SimFlouz/heure</p>
       </div>
       <button type="button" class="btn-gradient">
         <%= link_to "Try me ! 🧠", brain_path(brain), class:"text-decoration-none text-black" %>
