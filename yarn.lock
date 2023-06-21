@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+"typed.js@^2.0.16":
+  "integrity" "sha512-IBB52GlJiTUOnomwdVVf7lWgC6gScn8md+26zTHj5oJWA+4pSuclHE76rbGI2hnyO+NT+QXdIUHbfjAY5nEtcw=="
+  "resolved" "https://registry.npmjs.org/typed.js/-/typed.js-2.0.16.tgz"
+  "version" "2.0.16"

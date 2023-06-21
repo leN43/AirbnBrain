@@ -10,3 +10,25 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+html, body {
+  box-sizing: border-box;
+  // height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  box-sizing: border-box;
+  // min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.header, .footer {
+  // flex-grow: 0;
+  // flex-shrink: 0;
+}
+
+.content {
+  // flex-grow: 1;
+}
+@import "pages/home";
