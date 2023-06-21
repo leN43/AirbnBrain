@@ -26,9 +26,9 @@ brains = [{ name: "Bulby Le Rêveur", description: "Un cerveau qui passe son tem
 
 CATEGORIES = ['Négociatrice', 'Perfectionniste', 'Drama Queen', 'Macchiavélique', 'Contrepéteur', 'Urgentiste', 'Chanteur de douche', 'Poesie de la lune']
 
+Booking.delete_all
 Brain.delete_all
 User.delete_all
-Booking.delete_all
 
 10.times do
   User.create!(
