@@ -1,19 +1,22 @@
 .card-brain {
   overflow: hidden;
-  display: inline-table;
+  display: flex;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 20px;
-  height: 160px;
+  height: auto;
   border-radius: 4px;
   align-items: center;
   padding: 16px;
+  width: 95%;
+  margin: 14px auto;
 }
 
-.card-brain > img {
-  height: auto;
-  width: 100%;
+.card-brain img {
+  height: 180px;
+  width: 180px;
   object-fit: cover;
+  padding-right: 16px;
 }
 
 .card-brain h2 {
@@ -29,9 +32,7 @@
   text-align: justify;
 }
 
-
 .card-brain .card-brain-infos {
-  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;

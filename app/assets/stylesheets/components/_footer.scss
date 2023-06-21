@@ -1,16 +1,26 @@
 .footer {
   background: #F4F4F4;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
+
+  width: 100%;
+  height: 42px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
-.footer-links {
+
+.footer-content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
+// .footer-links {
+//   display: flex;
+//   justify-content: flex-start;
+// }
+// .footer-copyright {
+//   display: flex;
+//   justify-content: flex-end;
+// }
+
 .footer-links a {
   color: black;
   opacity: 0.15;
