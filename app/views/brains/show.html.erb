@@ -19,6 +19,7 @@
 <% end %>
 
 <div data-controller="toggle" class="mt-5">
+  <div data-controller="loader" data-loader-url-value="/bookings"></div>
   <button class="btn-gradient text-decoration-none text-black" data-action="click->toggle#book">Book me! 🧠</button>
   <div data-toggle-target="toggleableElement" class="d-none">
     <%= render "/shared/formbooking", booking: @booking %>
