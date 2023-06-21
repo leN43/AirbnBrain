@@ -1,17 +1,5 @@
 <div class="card-brain">
-
-
-<div class="card-brain-info">
-  <h2><%= @brain.name %></h2>
-  <h5><em><%= @brain.category%></em></h5>
-  <p><%= @brain.description %></p>
-  <p><%= @brain.price %></p>
-  <%= image_tag "https://source.unsplash.com/random/100x100/?fruit" %>
-</div>
-<button type="button" class="btn-gradient">
-  <%= link_to "Book me! 🧠", "#", class:"text-decoration-none text-black" %>
-<%# </button> %>
-
+  <%= image_tag "https://source.unsplash.com/random/100x100/?fruit", class:"brain-img" %>
 
   <div class="card-brain-info">
     <h2><%= @brain.name %></h2>
@@ -22,6 +10,7 @@
       <%= link_to "Me mettre à jour! 🧠", edit_brain_path(@brain), class:"text-decoration-none text-white btn-gradient" %>
       <%= link_to "Hasta la Vista, Baby! 🧠", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient" %>
     <% end %>
+
     <div data-controller="toggle" >
       <button class="btn-gradient text-decoration-none text-black" data-action="click->toggle#book">Réserve moi! 🧠</button>
       <div data-toggle-target="toggleableElement" class="d-none">
