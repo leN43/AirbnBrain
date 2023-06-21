@@ -1,6 +1,7 @@
 class BrainsController < ApplicationController
   before_action :set_brain, except: %i[new create index]
   before_action :set_user
+  before_action :set_booking, only: %i[show]
 
   def new
     @brain = Brain.new
@@ -21,7 +22,7 @@ class BrainsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new()
+    @booking = Booking.new
   end
 
   def edit; end
@@ -50,4 +51,9 @@ class BrainsController < ApplicationController
     @user = current_user
   end
 
+  def set_booking
+    @list_booking = Booking.find_by(user_id: current_user.id, brain_id: @brain.id)
+    @list_booking_by_brain = Booking.where(brain_id: @brain.id)
+    @size_booking = @user.bookings.size
+  end
 end

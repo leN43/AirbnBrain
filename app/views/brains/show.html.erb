@@ -1,6 +1,5 @@
 <div class="card-brain">
   <%= image_tag "https://source.unsplash.com/random/100x100/?fruit", class:"brain-img" %>
-
   <div class="card-brain-info">
     <h2><%= @brain.name %></h2>
     <h5><em><%= @brain.category%></em></h5>
@@ -11,11 +10,54 @@
       <%= link_to "Hasta la Vista, Baby! 🧠", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient" %>
     <% end %>
 
-    <div data-controller="toggle" >
-      <button class="btn-gradient text-decoration-none text-black" data-action="click->toggle#book">Réserve moi! 🧠</button>
-      <div data-toggle-target="toggleableElement" class="d-none">
-        <%= render "/shared/formbooking", booking: @booking %>
-      </div>
+<div class="cards-booking">
+  <div class="card-booking-info">
+  <% if @list_booking.nil? %>
+    <p>Tu n'as pas de reservation pour ce cerveau !</p>
+  <% elsif @size_booking > 1 %>
+    <% @list_booking.each do |booking| %>
+      <% if current_user.id == @brain.user_id%>
+        <p>Voici les reservations pour ton cerveau :</p>
+        <ul>
+          <li> <%= booking.start_date %></li>
+          <li><%= booking.end_date %></li>
+          <li> <%= booking.user.first_name %></li>
+          <li><%= booking.user.last_name %></li>
+          <li><%= booking.user.email %></li>
+        </ul>
+      <% else %>
+        <p>Voici tes reservations pour ce cerveau :</p>
+        <ul>
+          <li><%= booking.start_date %></li>
+          <li><%= booking.end_date %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  <% else %>
+      <% if current_user.id == @brain.user_id%>
+        <p>Voici la reservation pour ton cerveau :</p>
+        <ul>
+          <li><%= @list_booking.start_date %></li>
+          <li><%= @list_booking.end_date %></li>
+          <li><%= @list_booking.user.first_name %></li>
+          <li><%= @list_booking.user.last_name %></li>
+          <li><%= @list_booking.user.email %></li>
+        </ul>
+      <% else %>
+        <p>Voici ta reservation pour ce cerveau :</p>
+        <ul>
+          <li><%= @list_booking.start_date %></li>
+          <li><%= @list_booking.end_date %></li>
+        </ul>
+      <% end %>
+  <% end %>
     </div>
+  </div>
+
+
+<div data-controller="toggle" class="mt-5">
+  <button class="btn-gradient text-decoration-none text-black" data-action="click->toggle#book">Book me! 🧠</button>
+  <div data-toggle-target="toggleableElement" class="d-none" >
+    <%= render "/shared/formbooking", booking: @booking %>
   </div>
 </div>
