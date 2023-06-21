@@ -1,8 +1,8 @@
 <h1>AirBnBrain 🧠</h1>
 <% if user_signed_in? %>
-  <p> Bonjour <%= current_user.first_name %></p>
+  <p>Hello <%= current_user.first_name %></p>
 <% else %>
-  <p> Connecte toi pour découvrir nos cerveaux ! 😃 </p>
+  <p>You are not logged in</p>
 <% end %>
 
 <div class="container">

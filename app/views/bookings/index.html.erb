@@ -1,12 +1,11 @@
 <h1>My Brains Bookings</h1>
-<div data-controller="booking_loader" data-loader-url-value="/bookings">
-  <% @bookings.each do |booking| %>
-    <ul>
-      <li>
-        <%= link_to booking.brain.name, booking_path(booking) %>
-        <%= booking.start_date %>
-        <%= booking.end_date %>
-      </li>
-    </ul>
-  <% end %>
-</div>
+
+<% @bookings.each do |booking| %>
+  <ul>
+    <li>
+      <%= link_to booking.brain.name, booking_path(booking) %>
+      <%= booking.start_date %>
+      <%= booking.end_date %>
+    </li>
+  </ul>
+<% end %>
