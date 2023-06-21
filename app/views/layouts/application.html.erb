@@ -20,6 +20,8 @@
 
     <div class="wrapper">
       <div class="header">
+      <p class="alert"><%= alert %></p>
+      <p class="notice"><%= notice %></p>
         <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
         <%= render "shared/banner" %>
@@ -32,12 +34,7 @@
       <div class="footer">
         <%= render "shared/footer" %>
       </div>
-
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
     </div>
-
-
   </body>
 
 </html>

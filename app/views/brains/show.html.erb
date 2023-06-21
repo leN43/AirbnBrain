@@ -9,47 +9,36 @@
       <%= link_to "Me mettre à jour! 🧠", edit_brain_path(@brain), class:"text-decoration-none text-white btn-gradient" %>
       <%= link_to "Hasta la Vista, Baby! 🧠", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient" %>
     <% end %>
+  </div>
+</div>
 
 <div class="cards-booking">
   <div class="card-booking-info">
-  <% list_booking_by_brain = @list_booking.find(@brain.id) %>
-  <% if list_booking_by_brain.nil? %>
-    <p>Tu n'as pas de reservation pour ce cerveau !</p>
+  <p>Hey <%= current_user.first_name %> !</p>
+  <% if @list_booking.nil? %>
+    <p>You don't have any booking for this brain!</p>
   <% elsif @size_booking > 1 %>
     <% @list_booking.each do |booking| %>
       <% if current_user.id == @brain.user_id%>
-        <p>Voici les reservations pour ton cerveau :</p>
         <ul>
-          <li> <%= booking.start_date %></li>
-          <li><%= booking.end_date %></li>
-          <li> <%= booking.user.first_name %></li>
-          <li><%= booking.user.last_name %></li>
-          <li><%= booking.user.email %></li>
+          <h4> <%= booking.user.first_name %> <%= booking.user.last_name %></h4>
+          <p> From <strong><%= booking.start_date %></strong> to <%= booking.end_date %></p>
+          <p>Email address: <%= booking.user.email %></p>
         </ul>
       <% else %>
-        <p>Voici tes reservations pour ce cerveau :</p>
         <ul>
-          <li><%= booking.start_date %></li>
-          <li><%= booking.end_date %></li>
+          <p>You booked this brain from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong></p>
         </ul>
-        <%= link_to "All my bookings, " %>
       <% end %>
     <% end %>
   <% else %>
       <% if current_user.id == @brain.user_id%>
-        <p>Voici la reservation pour ton cerveau :</p>
-        <ul>
-          <li><%= @list_booking.start_date %></li>
-          <li><%= @list_booking.end_date %></li>
-          <li><%= @list_booking.user.first_name %></li>
-          <li><%= @list_booking.user.last_name %></li>
-          <li><%= @list_booking.user.email %></li>
-        </ul>
+          <h4> <%= booking.user.first_name %> <%= booking.user.last_name %></h4>
+          <p> From <strong><%= booking.start_date %></strong> to <%= booking.end_date %></p>
+          <p>Email address: <%= booking.user.email %></p>
       <% else %>
-        <p>Voici ta reservation pour ce cerveau :</p>
         <ul>
-          <li><%= @list_booking.start_date %></li>
-          <li><%= @list_booking.end_date %></li>
+          <p>You booked this brain from <strong>start</strong> to <strong>end</strong></p>
         </ul>
       <% end %>
   <% end %>
@@ -59,7 +48,7 @@
 
 <div data-controller="toggle" class="mt-5">
   <button class="btn-gradient text-decoration-none text-black" data-action="click->toggle#book">Book me! 🧠</button>
-  <div data-toggle-target="toggleableElement" class="d-none" >
+  <div data-toggle-target="toggleableElement" class="d-none" data-toggle-value="<%= @booking_date.to_json %>">
     <%= render "/shared/formbooking", booking: @booking %>
   </div>
 </div>
