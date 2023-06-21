@@ -24,6 +24,8 @@ brains = [{ name: "Bulby Le Rêveur", description: "Un cerveau qui passe son tem
 
 {name: "Sylvie La Shopaholic", description: "Sylvie ne peut pas résister à une bonne affaire. Que ce soit des chaussures en solde ou des gadgets high-tech, elle veut tout acheter. Un excellent choix si vous cherchez à stimuler l'économie.", categorie: "Négociatrice", price: 1600}]
 
+CATEGORIES = ['Négociatrice', 'Perfectionniste', 'Drama Queen', 'Macchiavélique', 'Contrepéteur', 'Urgentiste', 'Chanteur de douche', 'Poesie de la lune']
+
 Brain.delete_all
 User.delete_all
 Booking.delete_all
@@ -42,7 +44,7 @@ brains.each do |brain|
     name: brain[:name],
     description: brain[:description],
     price: brain[:price],
-    categorie: brain[:categorie],
+    category: CATEGORIES.sample,
     user_id: User.all.sample.id
   )
 end

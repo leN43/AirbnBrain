@@ -4,5 +4,5 @@ class Brain < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :users, through: :bookings, dependent: :destroy
   validates :name, :description, :price, presence: true, uniqueness: true
-  validates :categories, inclusion: { in: CATEGORIES }
+  validates :category, inclusion: { in: CATEGORIES }
 end
