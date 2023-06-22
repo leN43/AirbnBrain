@@ -30,6 +30,8 @@ Booking.delete_all
 Brain.delete_all
 User.delete_all
 
+STATUS = ['Pending', 'Accepted', 'Declined']
+
 10.times do
   User.create!(
     first_name: Faker::Superhero.name,
@@ -49,4 +51,15 @@ brains.each do |brain|
   )
 end
 
-# Booking.create!(brain: Brain.last, user: User.last, start_date: DateTime.new(2022, 2, 3), end_date: DateTime.new(2022, 2, 6))
+ID_USER = User.all.map { |user| user.id }
+
+10.times do
+  Booking.create!(
+    brain_id: Brain.all.sample.id,
+    user_id: ID_USER.sample,
+    start_date: Faker::Date.between(from: Date.today, to: 1.month.from_now),
+    end_date: Faker::Date.between(from: 1.month.from_now, to: 2.month.from_now),
+    status: STATUS.sample
+  )
+  ID_USER.delete_at(ID_USER.index(Booking.last.user_id))
+end
