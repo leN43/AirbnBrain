@@ -32,8 +32,11 @@ html, body {
   // flex-grow: 1;
 }
 
-.footer{
+.body{
   position: relative;
+}
+.footer{
+  position: absolute;
   bottom:0;
 }
 

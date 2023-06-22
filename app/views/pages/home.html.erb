@@ -1,33 +1,26 @@
-<h1>AirBnBrain 🧠</h1>
-<% if user_signed_in? %>
-  <p>Hello <%= current_user.first_name %></p>
-<% else %>
-  <p>You are not logged in</p>
-<% end %>
+
+  <h2 class="home-text">
+    Tonight, I'm gonna
+    <span class="typed">...</span>
+    <span id="typed-cursor">|</span>
+  </h2>
+
 
 <div class="container">
-  <div class="row height d-flex justify-content-center align-items-center">
-    <div class="col-md-8">
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          var typed = new Typed('#typed-text', {
-            strings: ['Bienvenue sur AirBnBrain!', 'Choisis ton prochain Cerveau!.'],
-            typeSpeed: 80,
-            loop: true
-          });
-        });
-      </script>
-      <div id="typed-text"></div>
-      <div class="search mb-4">
-  <i class="fa fa-search"></i>
-  <input type="text" class="form-control" id="searchInput" placeholder="CHERCHE UN CERVEAU">
-  <button class="btn btn-primary mt-2">CHERCHE</button>
-</div>
-
-      <div class="d-flex justify-content-center align-items-center">
-        <button class="btn custom-btn btn-lg mx-2" onclick="window.location.href = '/brains'">Mes cerveaux</button>
-        <button class="btn custom-btn btn-lg mx-2" onclick="window.location.href = '/bookings'">Reserver un Cerveau</button>
-      </div>
+  <div class="cards">
+    <div class="card-category">
+      ...be a chef
     </div>
+
+    <div class="card-category">
+      ...be a historian
+    </div>
+
+    <div class="card-category">
+      ...be a humorist
+    </div>
+
+    <div class="card-category">
+      ...be a scientist
   </div>
 </div>
