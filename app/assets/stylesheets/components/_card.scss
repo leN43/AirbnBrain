@@ -1,47 +1,88 @@
 .card-brain {
   overflow: hidden;
-  display: flex;
-  background: white;
+  background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
   height: auto;
-  border-radius: 4px;
-  align-items: center;
+  border-radius: 8px;
   padding: 16px;
   width: 95%;
   margin: 14px auto;
+  text-decoration: none;
+  color: black;
+  transition: .2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+
+// .card-brain:hover {
+//   background-color:  rgb(255, 135, 215);
+//   color: white;
+//   box-shadow: ;
+// }
+
+.card-brain:after {
+  background-color: rgb(255, 135, 215);
+  border-radius: 8px;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: .2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.card-brain:hover::after{
+  transform: translate(0, 0);
+}
+
+.card-brain:hover {
+  border: 2px solid transparent;
+  color: white;
+  transform: scale(1.05);
+  will-change: transform;
 }
 
 .card-brain img {
-  height: 180px;
-  width: 180px;
+  height: 160px;
+  width: 100%;
   object-fit: cover;
-  padding-right: 16px;
+  border-radius: 4px;
+}
+
+.card-brain-info {
+  padding-top: 8px;
+  text-align: center;
 }
 
 .card-brain h2 {
   font-size: 25px;
   font-weight: bold;
-  margin: 0;
 }
 
 .card-brain p {
   font-size: 16px;
   opacity: .7;
-  margin: 0;
-  text-align: justify;
-}
-
-.card-brain .card-brain-infos {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   position: relative;
+  bottom: -27px;
 }
 
-.card-brain-infos .card-brain-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
+
+// .card-brain .card-brain-infos {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+// }
+
+// .card-brain-infos .card-brain-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
