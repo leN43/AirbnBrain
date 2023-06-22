@@ -1,33 +1,62 @@
-<h1>AirBnBrain 🧠</h1>
-<% if user_signed_in? %>
-  <p>Hello <%= current_user.first_name %></p>
-<% else %>
-  <p>You are not logged in</p>
-<% end %>
-
 <div class="container">
-  <div class="row height d-flex justify-content-center align-items-center">
-    <div class="col-md-8">
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          var typed = new Typed('#typed-text', {
-            strings: ['Bienvenue sur AirBnBrain!', 'Choisis ton prochain Cerveau!.'],
-            typeSpeed: 80,
-            loop: true
-          });
+  <div class="script">
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var typed = new Typed('#typed-text', {
+          strings: ['Tonight I\'m gonna be', '..........>'],
+          typeSpeed: 100,
+          loop: true
         });
-      </script>
-      <div id="typed-text"></div>
-      <div class="search mb-4">
-  <i class="fa fa-search"></i>
-  <input type="text" class="form-control" id="searchInput" placeholder="CHERCHE UN CERVEAU">
-  <button class="btn btn-primary mt-2">CHERCHE</button>
-</div>
+      });
+    </script>
+  </div>
+  <div id="typed-text"></div>
 
-      <div class="d-flex justify-content-center align-items-center">
-        <button class="btn custom-btn btn-lg mx-2" onclick="window.location.href = '/brains'">Mes cerveaux</button>
-        <button class="btn custom-btn btn-lg mx-2" onclick="window.location.href = '/bookings'">Reserver un Cerveau</button>
+  <div class="row row-cols-2 g-3">
+    <div class="col">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1225&q=80" class="card-img-top"
+          alt="Hollywood Sign on The Hill" />
+        <div class="card-body">
+          <h3 class="card-title">...Be a scientist</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1593493354159-b2fb9fe1a36c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" class="card-img-top"
+          alt="Palm Springs Road" />
+        <div class="card-body">
+          <h3 class="card-title">...Be an athlete</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top"
+          alt="Hollywood Sign on The Hill" />
+        <div class="card-body">
+          <h3 class="card-title">...Be a musician</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519124040388-0c8421105fe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" class="card-img-top"
+          alt="Palm Springs Road" />
+        <div class="card-body">
+          <h3 class="card-title">...Be an historian</h3>
+        </div>
       </div>
     </div>
   </div>
+
+
 </div>
+<!-- Button section (commented out) -->
+  <!--
+  <div class="d-flex justify-content-center align-items-center">
+    <button class="btn custom-btn btn-lg mx-2" onclick="window.location.href = '/brains'">Mes cerveaux</button>
+    <button class="btn custom-btn btn-lg mx-2" onclick="window.location.href = '/bookings'">Reserver un Cerveau</button>
+  </div>
+  -->

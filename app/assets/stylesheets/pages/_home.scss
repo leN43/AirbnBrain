@@ -1,29 +1,38 @@
 // Specific CSS for your home-page
 @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
-.h1 , .h2 { color: #b48608;
-  font-size: 36px;
-  font-weight: 400; font-style:
-  44px; margin: 0 0 12px;
-  text-align: center;
-}
-
-
 .custom-btn {
   background-color: #FF87D7;
   color: #fff;
 }
-
-
 #typed-text {
   font-size: 40px;
-  text-align: center;
   text-transform: uppercase;
+  margin-left: 100px;
   color: #FF87D7;
-  font-weight : bold;
+  font-weight: bold;
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #fff,
+               0 0 30px #fff,
+               0 0 40px #FF87D7,
+               0 0 70px #FF87D7,
+               0 0 80px #FF87D7,
+               0 0 100px #FF87D7,
+               0 0 150px #FF87D7;
 }
-
-
+.card-title {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.card-body {
+  background-color: #FF87D7;
+  opacity: 0.75;
+}
+.card-body:hover {
+  opacity: 0.50;
+}
 
 body{
   background-color:#eee;
@@ -33,48 +42,4 @@ body{
 
  .height{
   height: 100vh;
- }
-
-
- .search{
- position: relative;
- box-shadow: 0 0 40px rgba(30, 207, 89, 0.1);
-
- }
-
- .search input{
-
-  height: 80px;
-  text-indent: 25px;
-  border: 2px solid #d6d4d4;
-
-
- }
-
-
- .search input:focus{
-
-  box-shadow: none;
-  border: 2px solid #FF87D7;
-
-
- }
-
- .search .fa-search{
-
-  position: absolute;
-  top: 20px;
-  left: 16px;
-
- }
-
- .search button{
-
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  height: 50px;
-  width: 110px;
-  background: #FF87D7;
-
  }
