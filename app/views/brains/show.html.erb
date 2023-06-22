@@ -22,33 +22,20 @@
 
 <div class="card-booking">
   <div class="card-booking-info">
-  <p>Hey <%= current_user.first_name %> !</p>
-  <% if @list_booking.nil? %>
-    <p>You don't have any booking for this brain!</p>
-  <% elsif @size_booking > 1 %>
-    <% @list_booking.each do |booking| %>
-      <% if current_user.id == @brain.user_id%>
-        <ul>
-          <h4> <%= booking.user.first_name %> <%= booking.user.last_name %></h4>
-          <p> From <strong><%= booking.start_date %></strong> to <%= booking.end_date %></p>
-          <p>Email address: <%= booking.user.email %></p>
-        </ul>
-      <% else %>
-        <ul>
-          <p>You booked this brain from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong></p>
-        </ul>
+    <p>Hey <%= current_user.first_name %> !</p>
+    <% if @booking_info.empty? %>
+      <p>You don't have any booking for the moment</p>
+    <% else %>
+      <% @booking_info.each do |key, booking| %>
+        <p>Start date: <%= booking[:start_date] %></p>
+        <p>End date: <%= booking[:end_date] %></p>
+        <p>Status: <%= booking[:status] %></p>
+        <% if booking[:user][:first_name] %>
+          <p>User: <%= booking[:user][:first_name] %> <%= booking[:user][:last_name] %></p>
+          <p>Email: <%= booking[:user][:email] %></p>
+        <% end %>
       <% end %>
     <% end %>
-  <% else %>
-      <% if current_user.id == @brain.user_id%>
-          <h4> <%= booking.user.first_name %> <%= booking.user.last_name %></h4>
-          <p> From <strong><%= booking.start_date %></strong> to <%= booking.end_date %></p>
-          <p>Email address: <%= booking.user.email %></p>
-      <% else %>
-        <ul>
-          <p>You booked this brain from <strong>start</strong> to <strong>end</strong></p>
-        </ul>
-      <% end %>
-  <% end %>
-    </div>
   </div>
+</div>
+
