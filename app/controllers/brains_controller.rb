@@ -2,6 +2,7 @@ class BrainsController < ApplicationController
   before_action :set_brain, except: %i[new create index]
   before_action :set_user
   before_action :set_booking, only: %i[show]
+  before_action :booking_date, only: %i[show]
 
   def new
     @brain = Brain.new
@@ -52,8 +53,19 @@ class BrainsController < ApplicationController
   end
 
   def set_booking
-    @list_booking = Booking.find_by(user_id: current_user.id, brain_id: @brain.id)
-    @list_booking_by_brain = Booking.where(brain_id: @brain.id)
-    @size_booking = @user.bookings.size
+    @list_booking = Booking.find_by(brain_id: @brain.id)
+    @size_booking = Booking.where(brain_id: @brain.id, user_id: @user.id).size
+  end
+
+  def booking_date
+    @booking_date = []
+    if Booking.where(brain_id: @brain.id).size == 1
+      @booking_date += (@list_booking.start_date..@list_booking.end_date).to_a
+      @list_booking.each do |booking|
+        @booking_date += (booking.start_date..booking.end_date).to_a
+      end
+      @booking_date.flatten!
+    end
+    @booking_date unless @booking_date.empty?
   end
 end
