@@ -54,7 +54,7 @@ class BrainsController < ApplicationController
   end
 
   def set_booking
-    @list_booking = Booking.where(brain_id: @brain.id)
+    Booking.where(brain_id: @brain.id).nil? ? @list_booking = [] : @list_booking = Booking.where(brain_id: @brain.id)
     @size_booking = Booking.where(brain_id: @brain.id).size
   end
 
@@ -67,22 +67,21 @@ class BrainsController < ApplicationController
   def booking_date
     @booking_date = []
     @list_booking = set_list_booking
-    if @size_booking.size > 1
+    if @size_booking > 1
       @list_booking.each do |booking|
         @booking_date += (booking.start_date..booking.end_date).to_a
       end
       @booking_date.flatten!
     else
-      @booking_date += (@list_booking.start_date..@list_booking.end_date).to_a
+      @booking_date += (@list_booking.start_date..@list_booking.end_date).to_a unless @booking_date.empty?
     end
-    @booking_date unless @booking_date.empty?
   end
 
   def booking_main
     @booking_info = {}
     if @size_booking == 1
-      @booking_info = booking_info(@list_booking)
-      @booking_info[:user] = user_info(@list_booking.user) if current_user.id != @brain.user_id
+      @booking_info[@list_booking.id] = booking_info(@list_booking)
+      @booking_info[@list_booking.id][:user] = user_info(@list_booking.user) if current_user.id != @brain.user_id
     elsif @size_booking > 1
       @list_booking.each do |booking|
         @booking_info[booking.id] = booking_info(booking)
