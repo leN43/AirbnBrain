@@ -1,20 +1,16 @@
 <div class="brains_index">
-  <h2>Nos cerveaux à la Une</h2>
+  <h2>Our top brains</h2>
 </div>
 
 <div class="cards-brains">
   <% @brains.each do |brain| %>
-    <div class="card-brain">
-      <%#  image %>
+    <%= link_to brain_path(brain), class:'card-brain' do %>
+      <%= image_tag "https://source.unsplash.com/random/400x400/?color", class:"brain-img" %>
       <div class="card-brain-info">
         <h2><%= brain.name %></h2>
         <h5><em><%= brain.category%></em></h5>
-        <p><%= brain.description %></p>
-        <p><%= brain.price %> SimFlouz/heure</p>
+        <p><%= brain.price %> SimFlouz/hour</p>
       </div>
-      <button type="button" class="btn-gradient">
-        <%= link_to "Try me ! 🧠", brain_path(brain), class:"text-decoration-none text-black" %>
-      </button>
-    </div>
+    <% end %>
   <% end %>
 </div>
