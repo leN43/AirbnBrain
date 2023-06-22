@@ -3,15 +3,14 @@ import flatpickr from "flatpickr"; // You need to import this to use new flatpic
 
 export default class extends Controller {
   connect() {
-    const BookingValue = this.element.dataset.value
+    const BookingValue = this.element.dataset.date.split(',').map(dateStr => new Date(dateStr));
     console.log(BookingValue)
     flatpickr(this.element, {
       altInput: true,
       altFormat: "F j, Y",
       dateFormat: "Y-m-d",
       minDate: "today",
-      disableMobile: true,
-      disable: toggleValue
+      disable: BookingValue
 
     })
   }

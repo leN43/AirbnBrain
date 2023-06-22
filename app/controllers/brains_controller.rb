@@ -69,11 +69,12 @@ class BrainsController < ApplicationController
     @list_booking = set_list_booking
     if @size_booking > 1
       @list_booking.each do |booking|
-        @booking_date += (booking.start_date..booking.end_date).to_a
+        (booking.start_date..booking.end_date).to_a.each do |date|
+          @booking_date << date
+        end
       end
-      @booking_date.flatten!
     else
-      @booking_date += (@list_booking.start_date..@list_booking.end_date).to_a unless @booking_date.empty?
+      @booking_date << (@list_booking.start_date..@list_booking.end_date).to_a unless @booking_date.empty?
     end
   end
 

@@ -1,5 +1,5 @@
 <%= simple_form_for([@brain, @booking]) do |f| %>
-  <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker", value: @booking_date.to_json } } %>
-  <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker", value: @booking_date.to_json } } %>
+  <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker", date: @booking_date.to_json } } %>
+  <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker", date: @booking_date.to_json } } %>
   <%= f.submit "Validate"%>
 <% end %>
