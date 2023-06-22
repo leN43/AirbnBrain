@@ -1,54 +1,41 @@
-<div class="card-brain">
-  <%= image_tag "https://source.unsplash.com/random/100x100/?fruit", class:"brain-img" %>
-  <div class="card-brain-info">
+<div class="card-brain-show">
+  <%= image_tag "https://source.unsplash.com/random/1200x1200/?fruit", class:"brain-img" %>
+  <div class="card-brain-info-show">
     <h2><%= @brain.name %></h2>
     <h5><em><%= @brain.category%></em></h5>
     <p><%= @brain.description %></p>
-    <p><%= @brain.price %> SimFlouz/heure</p>
+    <p id="price"><%= @brain.price %> SimFlouz/hour</p>
       <% if current_user.id == @brain.user_id %>
-      <%= link_to "Me mettre à jour! 🧠", edit_brain_path(@brain), class:"text-decoration-none text-white btn-gradient" %>
+      <%= link_to "Update me! 🧠", edit_brain_path(@brain), class:"text-decoration-none text-white btn-gradient" %>
       <%= link_to "Hasta la Vista, Baby! 🧠", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient" %>
     <% end %>
-  </div>
-</div>
 
-<div class="cards-booking">
-  <div class="card-booking-info">
-  <p>Hey <%= current_user.first_name %> !</p>
-  <% if @list_booking.nil? %>
-    <p>You don't have any booking for this brain!</p>
-  <% elsif @size_booking > 1 %>
-    <% @list_booking.each do |booking| %>
-      <% if current_user.id == @brain.user_id%>
-        <ul>
-          <h4> <%= booking.user.first_name %> <%= booking.user.last_name %></h4>
-          <p> From <strong><%= booking.start_date %></strong> to <%= booking.end_date %></p>
-          <p>Email address: <%= booking.user.email %></p>
-        </ul>
-      <% else %>
-        <ul>
-          <p>You booked this brain from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong></p>
-        </ul>
-      <% end %>
-    <% end %>
-  <% else %>
-      <% if current_user.id == @brain.user_id%>
-          <h4> <%= booking.user.first_name %> <%= booking.user.last_name %></h4>
-          <p> From <strong><%= booking.start_date %></strong> to <%= booking.end_date %></p>
-          <p>Email address: <%= booking.user.email %></p>
-      <% else %>
-        <ul>
-          <p>You booked this brain from <strong>start</strong> to <strong>end</strong></p>
-        </ul>
-      <% end %>
-  <% end %>
+  <div data-controller="toggle" class="mt-5">
+    <i class="fa-regular fa-calendar-days fa-2xl" data-action="click->toggle#book" id="calendar"></i>
+    <%# <button class="btn-gradient text-decoration-none text-black" data-action="click->toggle#book">Book me! 🧠</button> %>
+    <div data-toggle-target="toggleableElement" class="d-none" data-toggle-value="<%= @booking_date.to_json %>">
+      <%= render "/shared/formbooking", booking: @booking %>
     </div>
   </div>
-
-
-<div data-controller="toggle" class="mt-5">
-  <button class="btn-gradient text-decoration-none text-black" data-action="click->toggle#book">Book me! 🧠</button>
-  <div data-toggle-target="toggleableElement" class="d-none" data-toggle-value="<%= @booking_date.to_json %>">
-    <%= render "/shared/formbooking", booking: @booking %>
   </div>
 </div>
+
+<div class="card-booking">
+  <div class="card-booking-info">
+    <p>Hey <%= current_user.first_name %> !</p>
+    <% if @booking_info.empty? %>
+      <p>You don't have any booking for the moment</p>
+    <% else %>
+      <% @booking_info.each do |key, booking| %>
+        <p>Start date: <%= booking[:start_date] %></p>
+        <p>End date: <%= booking[:end_date] %></p>
+        <p>Status: <%= booking[:status] %></p>
+        <% if booking[:user][:first_name] %>
+          <p>User: <%= booking[:user][:first_name] %> <%= booking[:user][:last_name] %></p>
+          <p>Email: <%= booking[:user][:email] %></p>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
