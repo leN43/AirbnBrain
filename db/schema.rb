@@ -33,8 +33,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_22_120141) do
     t.text "description"
     t.float "price"
     t.bigint "user_id", null: false
-    t.string "category"
     t.text "photo_url"
+    t.string "category"
     t.index ["user_id"], name: "index_brains_on_user_id"
   end
 
