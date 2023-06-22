@@ -1,18 +1,26 @@
-<div class="card-brain">
-  <%= image_tag "https://source.unsplash.com/random/100x100/?fruit", class:"brain-img" %>
-  <div class="card-brain-info">
+<div class="card-brain-show">
+  <%= image_tag "https://source.unsplash.com/random/1200x1200/?fruit", class:"brain-img" %>
+  <div class="card-brain-info-show">
     <h2><%= @brain.name %></h2>
     <h5><em><%= @brain.category%></em></h5>
     <p><%= @brain.description %></p>
-    <p><%= @brain.price %> SimFlouz/heure</p>
+    <p id="price"><%= @brain.price %> SimFlouz/hour</p>
       <% if current_user.id == @brain.user_id %>
-      <%= link_to "Me mettre à jour! 🧠", edit_brain_path(@brain), class:"text-decoration-none text-white btn-gradient" %>
+      <%= link_to "Update me! 🧠", edit_brain_path(@brain), class:"text-decoration-none text-white btn-gradient" %>
       <%= link_to "Hasta la Vista, Baby! 🧠", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient" %>
     <% end %>
+
+  <div data-controller="toggle" class="mt-5">
+    <i class="fa-regular fa-calendar-days fa-2xl" data-action="click->toggle#book" id="calendar"></i>
+    <%# <button class="btn-gradient text-decoration-none text-black" data-action="click->toggle#book">Book me! 🧠</button> %>
+    <div data-toggle-target="toggleableElement" class="d-none" data-toggle-value="<%= @booking_date.to_json %>">
+      <%= render "/shared/formbooking", booking: @booking %>
+    </div>
+  </div>
   </div>
 </div>
 
-<div class="cards-booking">
+<div class="card-booking">
   <div class="card-booking-info">
   <p>Hey <%= current_user.first_name %> !</p>
   <% if @list_booking.nil? %>
@@ -44,11 +52,3 @@
   <% end %>
     </div>
   </div>
-
-
-<div data-controller="toggle" class="mt-5">
-  <button class="btn-gradient text-decoration-none text-black" data-action="click->toggle#book">Book me! 🧠</button>
-  <div data-toggle-target="toggleableElement" class="d-none" data-toggle-value="<%= @booking_date.to_json %>">
-    <%= render "/shared/formbooking", booking: @booking %>
-  </div>
-</div>

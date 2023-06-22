@@ -14,12 +14,6 @@
   z-index: 0;
 }
 
-// .card-brain:hover {
-//   background-color:  rgb(255, 135, 215);
-//   color: white;
-//   box-shadow: ;
-// }
-
 .card-brain:after {
   background-color: rgb(255, 135, 215);
   border-radius: 8px;
@@ -42,7 +36,6 @@
 }
 
 .card-brain:hover {
-  border: 2px solid transparent;
   color: white;
   transform: scale(1.05);
   will-change: transform;
@@ -72,17 +65,47 @@
   bottom: -27px;
 }
 
+.card-brain-show {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 5px 15px;
+  border-radius: 4px;
+}
 
-// .card-brain .card-brain-infos {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-//   position: relative;
-// }
+.card-brain-show img {
+  height: 100%;
+  width: 330px;
+  object-fit: cover;
+  padding-right: 10px;
+}
 
-// .card-brain-infos .card-brain-user {
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-//   width: 40px;
-// }
+.card-brain-show h2 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.card-brain-show #price {
+  font-size: 16px;
+  opacity: .7;
+  bottom: -27px;
+}
+
+.card-brain-show #calendar {
+  color: rgb(255, 135, 215);
+  position: absolute;
+  right: 14px;
+  top: 325px;
+  width: 40px;
+}
+
+.card-booking {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 15px auto;
+  border-radius: 4px;
+  width: 200px;
+  padding: 15px 5px;
+  text-align: center;
+}

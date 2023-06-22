@@ -5,7 +5,7 @@
 <div class="cards-brains">
   <% @brains.each do |brain| %>
     <%= link_to brain_path(brain), class:'card-brain' do %>
-      <%= image_tag "https://source.unsplash.com/random/400x400/?fruit", class:"brain-img" %>
+      <%= image_tag "https://source.unsplash.com/random/400x400/?color", class:"brain-img" %>
       <div class="card-brain-info">
         <h2><%= brain.name %></h2>
         <h5><em><%= brain.category%></em></h5>
