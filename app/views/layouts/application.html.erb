@@ -20,20 +20,19 @@
 
     <div class="wrapper">
       <div class="header">
-        <%# <%= render "shared/navbar" %> %>
+        <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
-        <%# <%= render "shared/banner" %> %>
+        <%= render "shared/banner" %>
       </div>
 
       <div class="content">
         <%= yield %>
       </div>
 
-
-    </div>
-          <div class="footer">
+      <div class="footer">
         <%= render "shared/footer" %>
       </div>
+    </div>
   </body>
 
 </html>
