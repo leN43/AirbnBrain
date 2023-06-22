@@ -1,42 +1,42 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+<nav class="navbar navbar-white bg-white ">
   <div class="container-fluid">
-    <%= link_to brains_path, class: "navbar-brand" do %>
-      <%= image_tag("brain.jpg", alt: "Logo") %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <a class="navbar-brand"></a>
+    <button class="navbar-toggler fixed-right" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon fixed-right"></span>
     </button>
+    <div class="offcanvas offcanvas-end off-canvas-box-shadow " id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <% if user_signed_in? %>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav flex-grow-1">
+          <li class="nav-item ">
+            <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-house"> Back Home</i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-circle-user" >  My Profile</i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-calendar-days" >  My Bookings</i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-brain" >  My Brains</i></a>
+          </li>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Mes cerveaux", bookings_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "Nouveau cerveau", new_brain_path, class: "nav-link" %>
+            <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-square-plus" >  Add New Brain</i></a>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-
+            <a class="nav-link" href="#"><i class="fa-solid fa-comment mr-auto">  My notifications</i></a>
           </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://www.brainline.org/sites/all/modules/custom/bl_brain/images/brain-lateral.png", class: "avatar", alt: "dropdown menu" %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+        </ul>
+      </div>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </div>
   </div>
-</div>
+</nav>
