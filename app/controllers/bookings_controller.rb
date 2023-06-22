@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[destroy show]
-  before_action :set_user, only: %i[new create]
+  before_action :set_user, only: %i[new create show index]
   # before_action :set_brain, only: %i[new create]
 
   def index
