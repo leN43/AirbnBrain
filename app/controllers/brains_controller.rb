@@ -61,6 +61,7 @@ class BrainsController < ApplicationController
     @booking_date = []
     if Booking.where(brain_id: @brain.id).size == 1
       @booking_date += (@list_booking.start_date..@list_booking.end_date).to_a
+    elsif Booking.where(brain_id: @brain.id).size > 1
       @list_booking.each do |booking|
         @booking_date += (booking.start_date..booking.end_date).to_a
       end
