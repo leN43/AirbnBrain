@@ -53,7 +53,7 @@ end
 
 ID_USER = User.all.map { |user| user.id }
 
-5.times do
+3.times do
   Booking.create!(
     brain_id: Brain.all.sample.id,
     user_id: ID_USER.sample,
