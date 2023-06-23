@@ -15,7 +15,7 @@
 }
 
 .card-brain:after {
-  background-color: #ff87d7;
+  background-color: rgb(255, 135, 215);
   border-radius: 8px;
   content: '';
   display: block;
@@ -70,7 +70,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 15px;
+  margin: 5px 15px;
   border-radius: 4px;
 }
 
@@ -96,7 +96,7 @@
   color: rgb(255, 135, 215);
   position: absolute;
   right: 14px;
-  top: 520px;
+  top: 515px;
   width: 40px;
 }
 
