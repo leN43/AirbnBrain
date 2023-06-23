@@ -6,10 +6,10 @@
     <p><%= @brain.description %></p>
     <p id="price"><%= @brain.price %> SimFlouz per day</p>
       <% if current_user.id == @brain.user_id %>
-      <%= link_to edit_brain_path(@brain), style: "text-decoration:none; margin-right: 7px; position:absolute; bottom:192px" do%>
+      <%= link_to edit_brain_path(@brain), style: "text-decoration:none; margin-right: 7px; position:absolute; bottom:200px; color: rgb(255, 135, 215)" do %>
         <i class="fa-solid fa-pen fa-xl"></i>
       <% end %>
-      <%= link_to brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, style: "position:absolute; bottom:192px; right:625px" do %>
+      <%= link_to brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, style: "position:absolute; bottom:200px; right:625px; color: rgb(255, 135, 215)" do %>
         <i class="fa-solid fa-trash fa-xl"></i>
         <% end %>
       <% end %>
