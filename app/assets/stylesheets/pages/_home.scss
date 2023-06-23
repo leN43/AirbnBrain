@@ -8,3 +8,23 @@ position: relative;
 display: block;
 box-sizing: content-box;
 }
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-brains {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards-brains {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards-brains {
+    grid-template-columns: 1fr 1fr;
+  }
+}

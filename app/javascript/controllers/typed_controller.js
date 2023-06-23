@@ -7,7 +7,7 @@ export default class extends Controller {
   }
 
   connect() {
-    const options = {strings: ["a historian", "a singer", "an artist", "a scientist"], typeSpeed: 100, loop: true};
+    const options = {strings: ['a Gourmet', 'a Music dealer', 'a Nerd', 'a Geek', 'a Netflix junky', 'a Jargon master', 'OK Google', 'a Sarcasm leader', 'a Brain teaser', 'a Rabbit hole guide'], typeSpeed: 100, loop: true};
     new Typed(this.element, options)
   }
 }
