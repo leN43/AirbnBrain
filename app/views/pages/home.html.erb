@@ -1,62 +1,6 @@
-<div class="container">
-  <div class="script">
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var typed = new Typed('#typed-text', {
-          strings: ['Tonight I\'m gonna be', '..........>'],
-          typeSpeed: 100,
-          loop: true
-        });
-      });
-    </script>
-  </div>
-  <div id="typed-text"></div>
 
-  <div class="row row-cols-2 g-3">
-    <div class="col">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1225&q=80" class="card-img-top"
-          alt="Hollywood Sign on The Hill" />
-        <div class="card-body">
-          <h3 class="card-title">...Be a scientist</h3>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1593493354159-b2fb9fe1a36c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" class="card-img-top"
-          alt="Palm Springs Road" />
-        <div class="card-body">
-          <h3 class="card-title">...Be an athlete</h3>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top"
-          alt="Hollywood Sign on The Hill" />
-        <div class="card-body">
-          <h3 class="card-title">...Be a musician</h3>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1519124040388-0c8421105fe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" class="card-img-top"
-          alt="Palm Springs Road" />
-        <div class="card-body">
-          <h3 class="card-title">...Be an historian</h3>
-        </div>
-      </div>
-    </div>
+  <div class="cerveau">
+      <%= link_to brains_path, id:"cerveau" do %>
+        <%= image_tag("brain.jpg", alt: "gros cerveau") %>
+      <% end %>
   </div>
-
-
-</div>
-<!-- Button section (commented out) -->
-  <!--
-  <div class="d-flex justify-content-center align-items-center">
-    <button class="btn custom-btn btn-lg mx-2" onclick="window.location.href = '/brains'">Mes cerveaux</button>
-    <button class="btn custom-btn btn-lg mx-2" onclick="window.location.href = '/bookings'">Reserver un Cerveau</button>
-  </div>
-  -->
