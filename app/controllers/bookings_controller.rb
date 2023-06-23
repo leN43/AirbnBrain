@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = @user
+    @booking.user_id = current_user.id
     @brain = Brain.find(params[:brain_id])
     @booking.brain = @brain
     if @booking.save!
@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:brain_id, :user_id, :start_date, :end_date, :status)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_user
