@@ -9,10 +9,14 @@
     <%= image_tag("brain.jpg", alt: "Logo") %>
   <% end %>
 <% when 1 %>
-  <% booking = @bookings.where(user_id:"#{current_user.id}")  %>
-  <%= link_to booking%>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
+<div class="d-flex flex-column w-50 justify-content-between mb-5 ms-3">
+  <% booking = @bookings.find_by(user_id:"#{current_user.id}") %>
+  <h4 class="mb-1"><%= link_to booking.brain.name, brain_path(booking.brain_id),  class:"text-decoration-none list-group-item flex-column align-items-start" %></h4>
+      <p class="mb-1">Start date: <strong><%= booking.start_date %></strong></p>
+      <p class="mb-1">End date: <strong><%= booking.end_date %></strong></p>
+      <p class="mb-1">Status: <strong><%= booking.status %></strong></p>
+      <small class="text-muted">Price: <%= booking.brain.price %> SimFlouz/heure</small>
+</div>
 <% else %>
 <div class="list-group-flush">
   <% @bookings.where(user_id:"#{current_user.id}").each do |booking| %>
