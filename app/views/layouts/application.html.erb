@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -20,18 +21,17 @@
 
     <div class="wrapper">
       <div class="header">
-        <%# <%= render "shared/navbar" %> %>
+        <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
-        <%# <%= render "shared/banner" %> %>
+        <%= render "shared/banner" %>
       </div>
 
       <div class="content">
         <%= yield %>
       </div>
-
-
     </div>
-          <div class="footer">
+
+      <div class="footer">
         <%= render "shared/footer" %>
       </div>
   </body>
