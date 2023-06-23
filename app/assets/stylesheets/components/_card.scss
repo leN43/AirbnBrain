@@ -101,11 +101,19 @@
 }
 
 .card-booking {
-  background-color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 15px auto;
-  border-radius: 4px;
-  width: 200px;
-  padding: 15px 5px;
+  overflow: hidden;
+  height: auto;
+  padding: 16px;
+  width: 95%;
+  margin: 14px auto;
+  text-decoration: none;
+  z-index: 0;
+}
+.card-booking-info {
+  padding-top: 8px;
   text-align: center;
+  font-size: 16px;
+  opacity: .7;
+  position: relative;
+  bottom: -27px;
 }
