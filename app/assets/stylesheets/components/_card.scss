@@ -117,3 +117,29 @@
   position: relative;
   bottom: -27px;
 }
+
+.dashboard-card {
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: auto;
+  border-radius: 8px;
+  padding: 16px;
+  width: 420px;
+  margin: 20px 10px;
+  text-align: center;
+}
+
+.dashboard-card h3 {
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.dashboard-card a {
+  margin: 4px;
+}
+
+.dashboard-card h2 {
+  border-bottom: 1px solid rgb(101, 101, 101);
+}

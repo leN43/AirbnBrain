@@ -1,26 +1,27 @@
+<h1 style= "text-align:center; margin-top:7px"> <%= @user.first_name %> dashboard</h1>
 
-<h1> <%= @user.first_name %> dashboard</h1>
+<div class="dashboard-cards">
+  <div class="dashboard-card">
+    <h2> My bookings</h2>
+    <% @bookings.each do |booking| %>
+      <h3> <%= booking.brain.name %> </h3>
+      <p> <%= booking.start_date %> </p>
+      <p> <%= booking.end_date %> </p>
+      <p> <%= booking.status %> </p>
+      <%= link_to "Delete me! 🧠", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient" %>
+    <% end %>
+  </div>
 
-<div>
-<h2> My bookings</h2>
-<% @bookings.each do |booking| %>
-  <h3> <%= booking.brain.name %> </h3>
-  <p> <%= booking.start_date %> </p>
-  <p> <%= booking.end_date %> </p>
-  <p> <%= booking.status %> </p>
-   <%= link_to "Delete me! 🧠", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient" %>
-<% end %>
-</div>
-
-<div>
-<h2> My brains</h2>
-<% @brains.each do |brain| %>
-  <h3> <%= brain.name %> </h3>
-  <%= link_to edit_brain_path(brain), class:"text-decoration-none text-white btn-gradient" do%>
-    <i class="fa-solid fa-pen fa-xl"></i>
-  <% end %>
-  <%= link_to brain_path(brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient"  do %>
-    <i class="fa-solid fa-trash fa-xl"></i>
-  <% end %>
-<% end %>
+  <div class="dashboard-card">
+    <h2> My brains</h2>
+    <% @brains.each do |brain| %>
+      <h3> <%= brain.name %> </h3>
+      <%= link_to edit_brain_path(brain), class:"text-decoration-none text-white btn-gradient" do%>
+        <i class="fa-solid fa-pen"></i>
+      <% end %>
+      <%= link_to brain_path(brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient"  do %>
+        <i class="fa-solid fa-trash"></i>
+      <% end %>
+    <% end %>
+    </div>
 </div>
