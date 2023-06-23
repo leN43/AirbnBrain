@@ -4,7 +4,7 @@ class BrainsController < ApplicationController
   before_action :set_booking, only: %i[show]
   before_action :booking_date, only: %i[show]
   before_action :booking_main, only: %i[show]
-  after_action :booking_main, only: %i[create]
+
 
   def new
     @brain = Brain.new
