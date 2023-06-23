@@ -20,13 +20,6 @@
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards-brains {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards-brains {
