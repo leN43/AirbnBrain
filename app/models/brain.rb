@@ -1,5 +1,5 @@
 class Brain < ApplicationRecord
-  CATEGORIES = ['Négociatrice', 'Perfectionniste', 'Drama Queen', 'Macchiavélique', 'Contrepéteur', 'Urgentiste', 'Chanteur de douche', 'Poesie de la lune']
+  CATEGORIES = ['Gourmet', 'Music dealer', 'Nerd', 'Geek', 'Netflix junky', 'Jargon master', 'OK Google', 'Sarcasm leader', 'Brain teaser', 'Rabbit hole guide']
 
   has_many :bookings, dependent: :destroy
   has_many :users, through: :bookings, dependent: :destroy

@@ -4,7 +4,7 @@
     <h2><%= @brain.name %></h2>
     <h5><em><%= @brain.category%></em></h5>
     <p><%= @brain.description %></p>
-    <p id="price"><%= @brain.price %> SimFlouz/hour</p>
+    <p id="price"><%= @brain.price %> SimFlouz per day</p>
       <% if current_user.id == @brain.user_id %>
       <%= link_to edit_brain_path(@brain), style: "text-decoration:none; margin-right: 7px; position:absolute; bottom:192px" do%>
         <i class="fa-solid fa-pen fa-xl"></i>
