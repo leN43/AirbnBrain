@@ -32,7 +32,7 @@ User.delete_all
 
 STATUS = ['Pending', 'Accepted', 'Declined']
 
-10.times do
+3.times do
   User.create!(
     first_name: Faker::Superhero.name,
     last_name: Faker::Superhero.suffix,
@@ -53,7 +53,7 @@ end
 
 ID_USER = User.all.map { |user| user.id }
 
-10.times do
+5.times do
   Booking.create!(
     brain_id: Brain.all.sample.id,
     user_id: ID_USER.sample,
