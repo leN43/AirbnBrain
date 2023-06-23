@@ -7,7 +7,7 @@ export default class extends Controller {
   }
 
   connect() {
-    const options = {strings: this.sentencesValue, typeSpeed: 40};
+    const options = {strings: ["a historian", "a singer", "an artist", "a scientist"], typeSpeed: 100, loop: true};
     new Typed(this.element, options)
   }
 }

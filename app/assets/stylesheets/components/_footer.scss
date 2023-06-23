@@ -1,6 +1,4 @@
 .footer {
-  position: relative;
-  bottom: 0;
   display: block;
   float: left;
   width: 100%;
@@ -10,6 +8,7 @@
   padding-top: 20px;
   justify-content: center;
   align-items: center;
+  position: relative;
 
 
   .footer-content {
