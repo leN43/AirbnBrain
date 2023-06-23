@@ -6,9 +6,13 @@
     <p><%= @brain.description %></p>
     <p id="price"><%= @brain.price %> SimFlouz/hour</p>
       <% if current_user.id == @brain.user_id %>
-      <%= link_to "Update me! 🧠", edit_brain_path(@brain), class:"text-decoration-none text-white btn-gradient" %>
-      <%= link_to "Hasta la Vista, Baby! 🧠", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"text-decoration-none text-white btn-gradient" %>
-    <% end %>
+      <%= link_to edit_brain_path(@brain), style: "text-decoration:none; margin-right: 7px; position:absolute; bottom:192px" do%>
+        <i class="fa-solid fa-pen fa-xl"></i>
+      <% end %>
+      <%= link_to brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, style: "position:absolute; bottom:192px; right:625px" do %>
+        <i class="fa-solid fa-trash fa-xl"></i>
+        <% end %>
+      <% end %>
 
   <%# <div data-controller="toggle" class="mt-5">
     <i class="fa-regular fa-calendar-days fa-2xl" data-action="click->toggle#book" id="calendar"></i>
@@ -27,6 +31,10 @@
         data-datepicker-status-value="Pending">
     <i class="fa-regular fa-calendar-days fa-2xl" id="calendar" data-datepicker-target="open" data-action="click->datepicker#connect"></i>
       <div id="mydate"></div>
+    <div data-toggle-target="toggleableElement" class="d-none" data-toggle-value="<%= @booking_date.to_json %>">
+      <%= render "/shared/formbooking", booking: @booking %>
+    </div>
+
   </div>
   </div>
 </div>
