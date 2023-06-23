@@ -1,45 +1,10 @@
-// Specific CSS for your home-page
-@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
-.custom-btn {
-  background-color: #FF87D7;
-  color: #fff;
+.cerveau#cerveau{
+overflow: auto;
+width: 100px;
+height: 100px;
+align-content: center;
+position: relative;
+display: block;
+box-sizing: content-box;
 }
-#typed-text {
-  font-size: 40px;
-  text-transform: uppercase;
-  margin-left: 100px;
-  color: #FF87D7;
-  font-weight: bold;
-  text-shadow: 0 0 10px #fff,
-               0 0 20px #fff,
-               0 0 30px #fff,
-               0 0 40px #FF87D7,
-               0 0 70px #FF87D7,
-               0 0 80px #FF87D7,
-               0 0 100px #FF87D7,
-               0 0 150px #FF87D7;
-}
-.card-title {
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.card-body {
-  background-color: #FF87D7;
-  opacity: 0.75;
-}
-.card-body:hover {
-  opacity: 0.50;
-}
-
-body{
-  background-color:#eee;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
- }
-
- .height{
-  height: 100vh;
- }
