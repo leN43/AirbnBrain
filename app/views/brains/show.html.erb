@@ -14,14 +14,31 @@
         <% end %>
       <% end %>
 
-  <div data-controller="toggle" class="mt-5">
+  <%# <div data-controller="toggle" class="mt-5">
     <i class="fa-regular fa-calendar-days fa-2xl" data-action="click->toggle#book" id="calendar"></i>
+    <%# <button class="btn-gradient text-decoration-none text-black" data-action="click->toggle#book">Book me! 🧠</button> %>
+    <%# <div data-toggle-target="toggleableElement" class="d-none" data-toggle-value="<%= @booking_date.to_json %>"
+      <%# <%= render "/shared/formbooking", booking: @booking %>
+    <%# </div> %>
+  <%# </div> %>
+  <%# </div> %>
+<%# </div> %>
+
+<div class="calendar" data-controller="datepicker" data-datepicker-target="input"
+        data-datepicker-date-value=<%=@booking_date.to_json%>
+        data-datepicker-brain-value=<%=@brain.id%>
+        data-datepicker-user-value=<%=current_user.id%>
+        data-datepicker-status-value="Pending">
+    <i class="fa-regular fa-calendar-days fa-2xl" id="calendar" data-datepicker-target="open" data-action="click->datepicker#connect"></i>
+      <div id="mydate"></div>
     <div data-toggle-target="toggleableElement" class="d-none" data-toggle-value="<%= @booking_date.to_json %>">
       <%= render "/shared/formbooking", booking: @booking %>
     </div>
+
   </div>
   </div>
 </div>
+
 
 <div class="card-booking">
   <div class="card-booking-info">
@@ -33,7 +50,7 @@
         <p>Start date: <%= booking[:start_date] %></p>
         <p>End date: <%= booking[:end_date] %></p>
         <p>Status: <%= booking[:status] %></p>
-        <% if booking[:user][:first_name] %>
+        <% if booking[:user] %>
           <p>User: <%= booking[:user][:first_name] %> <%= booking[:user][:last_name] %></p>
           <p>Email: <%= booking[:user][:email] %></p>
         <% end %>
