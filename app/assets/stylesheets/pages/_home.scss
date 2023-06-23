@@ -1,12 +1,10 @@
 
-.cerveau#cerveau{
-overflow: auto;
-width: 100px;
-height: 100px;
-align-content: center;
-position: relative;
+#brain {
+// overflow: auto;
+width: 500px;
+height: 436px;
+margin: 30px auto;
 display: block;
-box-sizing: content-box;
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
