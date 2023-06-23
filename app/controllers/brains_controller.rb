@@ -73,8 +73,8 @@ class BrainsController < ApplicationController
           @booking_date << date
         end
       end
-    else
-      @booking_date << (@list_booking.start_date..@list_booking.end_date).to_a unless @booking_date.empty?
+    elsif @size_booking == 1
+      @booking_date << (@list_booking.start_date..@list_booking.end_date).to_a
     end
   end
 
